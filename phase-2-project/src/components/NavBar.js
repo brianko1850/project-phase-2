@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useContext } from "react";
+import { QueryContext } from "../context/query";
 import { NavLink } from "react-router-dom";
 
 const linkStyles = {    
