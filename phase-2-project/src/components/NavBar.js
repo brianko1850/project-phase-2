@@ -18,13 +18,13 @@ const linkStyles = {
 function NavBar() {
   return (
     <div>
-      <NavLink className="navbar" exact to="/" style={linkStyles}>
+      <NavLink className="navbar" to="/" style={linkStyles}>
         Santuary Potties
       </NavLink>
-      <NavLink className="navbar" exact to="/restroomrater" style={linkStyles}>
+      <NavLink className="navbar" to="/commode/:id" style={linkStyles}>
         Restroom Rater
       </NavLink>
-      <NavLink className="navbar" exact to="/addacommode" style={linkStyles}>
+      <NavLink className="navbar" to="/commode/new" style={linkStyles}>
         Add a Commode
       </NavLink>
     </div>
