@@ -10,10 +10,17 @@ function Post() {
         <label htmlFor="Name">Name:</label>
         <input
             type="text"
+            required
             /*id="name"*/
             /*value={name}*/
             /*onChange={(e) => setDescription(e.target.value)}*/
         />
+         <label htmlFor="Address">Address:</label>
+        <textarea 
+            required
+        ></textarea>
+        <label htmlFor="Directions">Directions</label>
+        <textarea></textarea>
         <button type="submit">Add</button>
     </form>
     )
