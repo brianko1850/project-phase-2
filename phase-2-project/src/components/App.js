@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import Home from "./Home";
 import Post from "./Post";
 import NavBar from "./NavBar";
-import Rate from "./Rate";
+import About from "./About";
 
 
 
@@ -16,7 +16,7 @@ function App() {
           <Routes>
               <Route path="/" element={ <Home/>}/>
               <Route path="/commodes/new" element={ <Post/>}/>
-              <Route path="/commodes/:id" element={ <Rate/>}/>
+              <Route path="/commodes/about" element={ <About/>}/>
           </Routes>
       </Router>
     </div>

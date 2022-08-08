@@ -3,9 +3,19 @@ import { QueryContext } from "../context/query";
 
 function Post() {
 
-    const [ query, setQuery ] = useContext(QueryContext)
+    const { query, setQuery } = useContext(QueryContext)
     return (
-    <h1>Add a Commode</h1>
+        <form /*onSubmit={handleSubmit}*/>
+        <h2>Add a Commode</h2>
+        <label htmlFor="Name">Name:</label>
+        <input
+            type="text"
+            /*id="name"*/
+            /*value={name}*/
+            /*onChange={(e) => setDescription(e.target.value)}*/
+        />
+        <button type="submit">Add todo</button>
+    </form>
     )
 }
 

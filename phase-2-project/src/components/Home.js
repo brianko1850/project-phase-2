@@ -13,13 +13,26 @@ function Home() {
         fetch(`https://www.refugerestrooms.org/api/v1/restrooms/search?page=1&per_page=10&offset=0&ada=true&unisex=true&query=${query}`)
         .then(res=>res.json())
         .then(data=>setBathrooms(data))
-      },[])
+      },[ query ])
+  
+    
+
+    const disiplayBathroom = bathrooms.map(bathroom=> {
+        return (
+        <div>
+        <li>
+            <h2>{bathroom.name}</h2>
+            <p>{bathroom.street}</p>
+            <p>{bathroom.directions}</p>
+        </li>
+    </div>
+        )
+    })
 
     const handleSearch=(e)=>{
         e.preventDefault();
-
-        console.log(e.value)
-        console.log(query)
+        setQuery(e.target.querySelector("#header-search").value)
+        
 
     }
   
@@ -27,15 +40,16 @@ function Home() {
     return (
     <>
         <h1>Santuary Potties</h1>
-            <form>
+            <form onSubmit={ handleSearch }>
                 <input
                     type="text"
                     id="header-search"
                     placeholder="Search cities"
                     name="s" 
                 />
-                <button type="submit" onSubmit={ handleSearch }>Search</button>
+                <button type="submit">Search</button>
             </form>
+           {disiplayBathroom}
       
         
     </>
