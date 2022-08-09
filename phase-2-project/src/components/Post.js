@@ -19,12 +19,14 @@ function Post() {
             value={name}
             onChange={(e) => setName(e.target.value)}
         />
+        <br/>
          <label htmlFor="Address">Address:</label>
         <textarea 
             required
             value={address}
             onChange={(e) => setAddress(e.target.value)}
         ></textarea>
+        <br/>
         <label htmlFor="Directions">Directions</label>
         <textarea
             value={directions}
@@ -33,7 +35,9 @@ function Post() {
         <button type="submit">Add</button>
         <p>
             {name}
+            <br/>
             {address}
+            <br/>
             {directions}
         </p>
     </form>
