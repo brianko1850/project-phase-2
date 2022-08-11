@@ -10,7 +10,7 @@ function Post() {
     const [ directions, setDirections ] = useState("")
     const bathroom = 
         {
-          "id": 0,
+          "id": Math.random(),
           "name": name,
           "street": address,
           "city": query,
@@ -19,8 +19,8 @@ function Post() {
           "unisex": true,
           "directions": directions,
           "comment": "",
-          "latitude": 47.5826887,
-          "longitude": -122.3846954,
+          "latitude": Math.random(),
+          "longitude": Math.random(),
           "created_at": Date.now(),
           "updated_at": Date.now(),
           "downvote": 0,
@@ -32,7 +32,10 @@ function Post() {
         }
 
     return (
-        <form onSubmit={console.log(bathroom)}>
+        <form onSubmit={(e)=>{
+            e.preventDefault()
+            console.log(bathroom)}
+        }>
         <h2>Add a Commode</h2>
         <label htmlFor="Name">Name:</label>
         <input
