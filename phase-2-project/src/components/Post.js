@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useState } from "react";
 import { QueryContext } from "../context/query";
 
-function Post() {
+function Post({ bathrooms, onAdd }) {
 
     const { query, setQuery } = useContext(QueryContext)
     const [ name, setName ] = useState("")

@@ -14,6 +14,10 @@ function App() {
   const [ bathrooms, setBathrooms] = useState([])
   
   const { query, setQuery } = useContext(QueryContext)
+  const addBathrooms = (newBathroom)=>{
+    const updatedBathrooms = [...bathrooms, newBathroom]
+    setBathrooms(updatedBathrooms)
+  }
 
 
    
@@ -29,7 +33,7 @@ function App() {
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post setBathrooms={setBathrooms}/>}/>
+              <Route path="/commodes/new" element={ <Post bathrooms={ bathrooms } onAdd={addBathrooms}/>}/>
               <Route path="/commodes/about" element={ <About/>}/>
           </Routes>
       </Router>
