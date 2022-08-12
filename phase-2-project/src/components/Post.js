@@ -8,7 +8,7 @@ function Post({ bathrooms, onAdd }) {
     const [ name, setName ] = useState("")
     const [ address, setAddress ] =useState("")
     const [ directions, setDirections ] = useState("")
-    const bathroom = 
+    const newBathroom = 
         {
           "id": Math.random(),
           "name": name,
@@ -34,7 +34,7 @@ function Post({ bathrooms, onAdd }) {
     return (
         <form onSubmit={(e)=>{
             e.preventDefault()
-            console.log(bathroom)}
+            onAdd(newBathroom)}
         }>
         <h2>Add a Commode</h2>
         <label htmlFor="Name">Name:</label>
