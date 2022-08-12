@@ -21,8 +21,8 @@ function NavBar() {
       <NavLink className="navbar" to="/" style={linkStyles}>
         Santuary Potties
       </NavLink>
-      <NavLink className="navbar" to="/commodes/about" style={linkStyles}>
-        About
+      <NavLink className="navbar" to="/commodes/pending" style={linkStyles}>
+        Pending
       </NavLink>
       <NavLink className="navbar" to="/commodes/new" style={linkStyles}>
         Add a Commode

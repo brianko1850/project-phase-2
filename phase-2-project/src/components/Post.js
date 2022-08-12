@@ -8,6 +8,7 @@ function Post({ bathrooms, onAdd }) {
     const [ name, setName ] = useState("")
     const [ address, setAddress ] =useState("")
     const [ directions, setDirections ] = useState("")
+    const [ pendingBR, setPendingBR ] = useState([])
     const newBathroom = 
         {
           "id": Math.random(),
@@ -30,11 +31,26 @@ function Post({ bathrooms, onAdd }) {
           "edit_id": 0,
           "approved": false
         }
+    function handleSubmit(){
+
+      
+        fetch("http://localhost:8000/bathrooms", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify(newBathroom)
+            })
+                .then(r => r.json())
+                .then(data => setPendingBR(data))
+                .then(console.log(pendingBR))
+        }
+    
 
     return (
         <form onSubmit={(e)=>{
             e.preventDefault()
-            onAdd(newBathroom)}
+            handleSubmit(newBathroom)}
         }>
         <h2>Add a Commode</h2>
         <label htmlFor="Name">Name:</label>

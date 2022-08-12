@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import Home from "./Home";
 import Post from "./Post";
 import NavBar from "./NavBar";
-import About from "./About";
+import Pending from "./Pending";
 import { QueryContext } from "../context/query";
 
 
@@ -14,10 +14,7 @@ function App() {
   const [ bathrooms, setBathrooms] = useState([])
   
   const { query, setQuery } = useContext(QueryContext)
-  const addBathrooms = (newBathroom)=>{
-    const updatedBathrooms = [...bathrooms, newBathroom]
-    setBathrooms(updatedBathrooms)
-  }
+ 
 
 
    
@@ -33,8 +30,8 @@ function App() {
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post bathrooms={ bathrooms } onAdd={addBathrooms}/>}/>
-              <Route path="/commodes/about" element={ <About/>}/>
+              <Route path="/commodes/new" element={ <Post/>}/>
+              <Route path="/commodes/pending" element={ <Pending/>}/>
           </Routes>
       </Router>
     </div>
