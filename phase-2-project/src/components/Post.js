@@ -8,7 +8,6 @@ function Post({ bathrooms, onAdd }) {
     const [ name, setName ] = useState("")
     const [ address, setAddress ] =useState("")
     const [ directions, setDirections ] = useState("")
-    const [ pendingBR, setPendingBR ] = useState([])
     const newBathroom = 
         {
           "id": Math.random(),
@@ -42,8 +41,7 @@ function Post({ bathrooms, onAdd }) {
                 body: JSON.stringify(newBathroom)
             })
                 .then(r => r.json())
-                .then(data => setPendingBR(data))
-                .then(console.log(pendingBR))
+                .then(data => console.log(data))
         }
     
 
