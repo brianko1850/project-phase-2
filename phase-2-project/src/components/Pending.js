@@ -8,12 +8,13 @@ function Pending() {
     const displayPending =  pending.map(data => {
       return (
         <>
-          {data.name}
-          <br/>
-          {data.street}
-          <br/>
-          {data.directions}
-          <br/>
+          <ul>
+            <h2>{data.name}</h2>
+            <h3>{data.city}</h3>
+            <li>{data.street}</li>
+            <li>{data.directions}</li>
+            <br/>
+          </ul>
         </>
       )
     })

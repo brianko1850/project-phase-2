@@ -20,13 +20,14 @@ function Home({ bathrooms }) {
     const disiplayBathroom = bathrooms.map(bathroom=> {
         return (
         <div>
-        <li>
-            <h2>{bathroom.name}</h2>
-            <p>{bathroom.street}</p>
-            <p>{bathroom.directions}</p>
-        </li>
-    </div>
-        )
+            <ul class="list">
+                <h2>{bathroom.name}</h2>
+                <li>{bathroom.street}</li>
+                <li>{bathroom.directions}</li>
+            </ul>
+            <br/>
+        </div>
+            )
     })
 
     const handleSearch=(e)=>{
