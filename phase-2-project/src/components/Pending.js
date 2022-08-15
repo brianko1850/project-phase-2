@@ -5,6 +5,18 @@ function Pending() {
 
     const { query, setQuery } = useContext(QueryContext)
     const [ pending, setPending ] = useState([])
+    const displayPending =  pending.map(data => {
+      return (
+        <>
+          {data.name}
+          <br/>
+          {data.street}
+          <br/>
+          {data.directions}
+          <br/>
+        </>
+      )
+    })
 
     useEffect(()=>{
         fetch(`http://localhost:8000/bathrooms`)
@@ -14,7 +26,7 @@ function Pending() {
     console.log(pending)
     return (
     <>    
-      { pending }
+      { displayPending }
     </>    )
 }
 

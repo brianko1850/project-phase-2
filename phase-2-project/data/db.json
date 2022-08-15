@@ -41,6 +41,27 @@
       "changing_table": false,
       "edit_id": 0,
       "approved": false
+    },
+    {
+      "id": 0.37663883076789073,
+      "name": "sef",
+      "street": "safefa",
+      "city": "seattle",
+      "state": "",
+      "accessible": true,
+      "unisex": true,
+      "directions": "aseraes",
+      "comment": "",
+      "latitude": 0.8395715411140101,
+      "longitude": 0.7549894413749139,
+      "created_at": 1660591463651,
+      "updated_at": 1660591463651,
+      "downvote": 0,
+      "upvote": 0,
+      "country": "",
+      "changing_table": false,
+      "edit_id": 0,
+      "approved": false
     }
   ]
 }
