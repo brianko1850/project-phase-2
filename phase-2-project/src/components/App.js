@@ -22,11 +22,11 @@ function App() {
       .then(data=>setBathrooms(data))
     },[ query ])
 
-    useEffect(()=>{
-      fetch(`http://localhost:8000/bathrooms`)
-      .then(res=>res.json())
-      .then(data=>setPendings(data))
-    },[])
+    // useEffect(()=>{
+    //   fetch(`http://localhost:8000/bathrooms`)
+    //   .then(res=>res.json())
+    //   .then(data=>setPendings(data))
+    // },[])
   
 
   return (
@@ -35,7 +35,7 @@ function App() {
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post onPendings={setPendings}/>}/>
+              <Route path="/commodes/new" element={ <Post pendings={ pendings } setPendings={setPendings}/>}/>
               <Route path="/commodes/pending" element={ <Pending pendings={ pendings }/>}/>
           </Routes>
       </Router>

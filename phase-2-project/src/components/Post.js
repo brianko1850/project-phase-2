@@ -1,8 +1,8 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useState } from "react";
 import { QueryContext } from "../context/query";
 
-function Post({ bathrooms, onAdd }) {
+function Post({ pendings, setPendings }) {
 
     const { query, setQuery } = useContext(QueryContext)
     const [ name, setName ] = useState("")
@@ -32,7 +32,6 @@ function Post({ bathrooms, onAdd }) {
         }
     function handleSubmit(){
 
-      
         fetch("http://localhost:8000/bathrooms", {
                 method: "POST",
                 headers: {
@@ -41,8 +40,8 @@ function Post({ bathrooms, onAdd }) {
                 body: JSON.stringify(newBathroom)
             })
                 .then(r => r.json())
-                .then(data => console.log(data))
-        }
+                .then(data => setPendings(data))
+    }
     
 
     return (

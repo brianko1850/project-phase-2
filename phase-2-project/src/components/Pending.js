@@ -4,7 +4,6 @@ import { QueryContext } from "../context/query";
 
 function Pending({ pendings }) {
 
-    const { query, setQuery } = useContext(QueryContext) 
     const displayPending =  pendings.map(data => {
       return (
         <>
@@ -19,12 +18,6 @@ function Pending({ pendings }) {
       )
     })
 
-    // useEffect(()=>{
-    //     fetch(`http://localhost:8000/bathrooms`)
-    //     .then(res=>res.json())
-    //     .then(data=>setPending(data))
-    // },[])
-    console.log(pendings)
     return (
     <>    
       { displayPending }
