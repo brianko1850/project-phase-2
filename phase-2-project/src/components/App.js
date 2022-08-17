@@ -10,28 +10,33 @@ import { QueryContext } from "../context/query";
 
 
 function App() {
-
-  const [ bathrooms, setBathrooms] = useState([])
   
+  
+  const [ bathrooms, setBathrooms] = useState([])
+  const [ pendings, setPendings ] = useState([])
   const { query, setQuery } = useContext(QueryContext)
- 
 
-
-   
   useEffect(()=>{
       fetch(`https://www.refugerestrooms.org/api/v1/restrooms/search?page=1&per_page=10&offset=0&ada=true&unisex=true&query=${query}`)
       .then(res=>res.json())
       .then(data=>setBathrooms(data))
     },[ query ])
 
+    useEffect(()=>{
+      fetch(`http://localhost:8000/bathrooms`)
+      .then(res=>res.json())
+      .then(data=>setPendings(data))
+    },[])
+  
+
   return (
-    <div>
+    <div className="nav">
       <Router>
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post/>}/>
-              <Route path="/commodes/pending" element={ <Pending/>}/>
+              <Route path="/commodes/new" element={ <Post onPendings={setPendings}/>}/>
+              <Route path="/commodes/pending" element={ <Pending pendings={ pendings }/>}/>
           </Routes>
       </Router>
     </div>

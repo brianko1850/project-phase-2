@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useContext } from "react";
 import { QueryContext } from "../context/query";
 
-function Pending() {
 
-    const { query, setQuery } = useContext(QueryContext)
-    const [ pending, setPending ] = useState([])
-    const displayPending =  pending.map(data => {
+function Pending({ pendings }) {
+
+    const { query, setQuery } = useContext(QueryContext) 
+    const displayPending =  pendings.map(data => {
       return (
         <>
           <ul>
@@ -19,12 +19,12 @@ function Pending() {
       )
     })
 
-    useEffect(()=>{
-        fetch(`http://localhost:8000/bathrooms`)
-        .then(res=>res.json())
-        .then(data=>setPending(data))
-    },[])
-    console.log(pending)
+    // useEffect(()=>{
+    //     fetch(`http://localhost:8000/bathrooms`)
+    //     .then(res=>res.json())
+    //     .then(data=>setPending(data))
+    // },[])
+    console.log(pendings)
     return (
     <>    
       { displayPending }
