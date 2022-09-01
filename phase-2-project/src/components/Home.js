@@ -8,11 +8,11 @@ function Home({ bathrooms }) {
     const { query, setQuery } = useContext(QueryContext)
     const disiplayBathroom = bathrooms.map(bathroom=> {
         return (
-        <div className="home" >
-            <ul className="home">
-                <h2 className="home">{bathroom.name}</h2>
-                <li className="home">{bathroom.street}</li>
-                <li className="home">{bathroom.directions}</li>
+        <div>
+            <ul>
+                <h2>{bathroom.name}</h2>
+                <li>{bathroom.street}</li>
+                <li>{bathroom.directions}</li>
             </ul>
             <br/>
         </div>
@@ -25,8 +25,8 @@ function Home({ bathrooms }) {
   
     return (
     <>
-        <h1 className="home">Santuary Potties</h1>
-            <form className="home" onSubmit={ handleSearch }>
+        <h1>Santuary Potties</h1>
+            <form onSubmit={ handleSearch }>
                 <input
                     type="text"
                     id="header-search"
