@@ -13,6 +13,11 @@
 .home {
 	background-color: hotpink;
 	font-family: "Lucida Console";
+	
+}
+
+h1 {
+	font-family: "Lucida Console";
 }
 
 .app {
