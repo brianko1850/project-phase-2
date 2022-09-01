@@ -16,13 +16,15 @@
 	
 }
 label{
-	display: inline-flex;
-	text-align: right;
+	display: inline-block;
+	margin-right: 10px;
+	text-align: left;
 }
 input {
 	width: fit-content;
 	display: inline-block;
-	float: left;
+
+	margin: 5px;
 
 }
 
