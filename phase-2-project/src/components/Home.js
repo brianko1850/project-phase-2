@@ -1,5 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import { QueryContext } from "../context/query";
+import './style.css'
 
 
 function Home({ bathrooms }) {
@@ -7,11 +8,11 @@ function Home({ bathrooms }) {
     const { query, setQuery } = useContext(QueryContext)
     const disiplayBathroom = bathrooms.map(bathroom=> {
         return (
-        <div>
-            <ul class="list">
-                <h2>{bathroom.name}</h2>
-                <li>{bathroom.street}</li>
-                <li>{bathroom.directions}</li>
+        <div className="home" >
+            <ul className="home">
+                <h2 className="home">{bathroom.name}</h2>
+                <li className="home">{bathroom.street}</li>
+                <li className="home">{bathroom.directions}</li>
             </ul>
             <br/>
         </div>
@@ -24,8 +25,8 @@ function Home({ bathrooms }) {
   
     return (
     <>
-        <h1>Santuary Potties</h1>
-            <form onSubmit={ handleSearch }>
+        <h1 className="home">Santuary Potties</h1>
+            <form className="home" onSubmit={ handleSearch }>
                 <input
                     type="text"
                     id="header-search"

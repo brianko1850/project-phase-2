@@ -1,5 +1,5 @@
 import React, { useContext, useState, useEffect }  from "react";
-import './App.css';
+import './style.css';
 import { BrowserRouter as Router, Route, Routes, } from "react-router-dom";
 import Home from "./Home";
 import Post from "./Post";
@@ -14,6 +14,7 @@ function App() {
   
   const [ bathrooms, setBathrooms] = useState([])
   const [ pendings, setPendings ] = useState([])
+  const [ newPendings, setNewPendings ] = useState([])
   const { query, setQuery } = useContext(QueryContext)
 
   useEffect(()=>{
@@ -22,20 +23,20 @@ function App() {
       .then(data=>setBathrooms(data))
     },[ query ])
 
-    // useEffect(()=>{
-    //   fetch(`http://localhost:8000/bathrooms`)
-    //   .then(res=>res.json())
-    //   .then(data=>setPendings(data))
-    // },[])
+    useEffect(()=>{
+      fetch(`http://localhost:8000/bathrooms`)
+      .then(res=>res.json())
+      .then(data=>setPendings(data))
+    },[ newPendings ])
   
 
   return (
-    <div className="nav">
+    <div className="app">
       <Router>
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post pendings={ pendings } setPendings={setPendings}/>}/>
+              <Route path="/commodes/new" element={ <Post newPendings={ newPendings } setNewPendings={setNewPendings}/>}/>
               <Route path="/commodes/pending" element={ <Pending pendings={ pendings }/>}/>
           </Routes>
       </Router>

@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { useState } from "react";
+import './style.css'
 import { QueryContext } from "../context/query";
 
-function Post({ pendings, setPendings }) {
+function Post({ newPendings, setNewPendings }) {
 
     const { query, setQuery } = useContext(QueryContext)
     const [ name, setName ] = useState("")
@@ -40,12 +41,12 @@ function Post({ pendings, setPendings }) {
                 body: JSON.stringify(newBathroom)
             })
                 .then(r => r.json())
-                .then(data => setPendings(data))
+                .then(data => setNewPendings(data))
     }
     
 
     return (
-        <form onSubmit={(e)=>{
+        <form className="form" onSubmit={(e)=>{
             e.preventDefault()
             handleSubmit(newBathroom)}
         }>

@@ -1,0 +1,27 @@
+.navbar {    
+	display: inline-block;
+	position: center;
+	text-align: center;
+	width: 50px;
+	padding: 20px;
+	margin: 20px;
+	color: blue;
+	font-size: 15px;
+	font-family: "Lucida Console";
+
+  };
+.home {
+	background-color: hotpink;
+	font-family: "Lucida Console";
+}
+
+.app {
+	background-color: hotpink;
+}
+
+.post {
+	background-color: hotpink;
+	font-family: "Lucida Console";
+	padding: 20px;
+	
+};
