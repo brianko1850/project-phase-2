@@ -7,11 +7,8 @@ import NavBar from "./NavBar";
 import Pending from "./Pending";
 import { QueryContext } from "../context/query";
 
-
-
 function App() {
-  
-  
+
   const [ bathrooms, setBathrooms] = useState([])
   const [ pendings, setPendings ] = useState([])
   const [ newPendings, setNewPendings ] = useState([])
@@ -21,13 +18,13 @@ function App() {
       fetch(`https://www.refugerestrooms.org/api/v1/restrooms/search?page=1&per_page=10&offset=0&ada=true&unisex=true&query=${query}`)
       .then(res=>res.json())
       .then(data=>setBathrooms(data))
-    },[ query ])
+  },[ query ])
 
-    useEffect(()=>{
+  useEffect(()=>{
       fetch(`http://localhost:8000/bathrooms`)
       .then(res=>res.json())
       .then(data=>setPendings(data))
-    },[ newPendings ])
+  },[ newPendings ])
   
 
   return (
