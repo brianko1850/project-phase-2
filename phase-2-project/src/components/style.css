@@ -23,22 +23,19 @@ label{
 input {
 	width: fit-content;
 	display: inline-block;
-
 	margin: 5px;
-
 }
-
+li {
+	font-family: "Lucida Console";
+	color: rgb(121, 57, 173)
+}
 h1 {
 	font-family: "Lucida Console";
 }
-
+h2 {
+	font-family: "Lucida Console";
+}
 .app {
-	background-color: hotpink;
+	background-color: rgb(179, 241, 184);
 }
 
-.post {
-	background-color: hotpink;
-	font-family: "Lucida Console";
-	padding: 20px;
-	
-};

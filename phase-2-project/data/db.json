@@ -41,6 +41,27 @@
       "changing_table": false,
       "edit_id": 0,
       "approved": false
+    },
+    {
+      "id": 0.011371361219182585,
+      "name": "asfas",
+      "street": "fasfas",
+      "city": "new york",
+      "state": "",
+      "accessible": true,
+      "unisex": true,
+      "directions": "fasfasf",
+      "comment": "",
+      "latitude": 0.1046404367514191,
+      "longitude": 0.731357769623654,
+      "created_at": 1662140449340,
+      "updated_at": 1662140449340,
+      "downvote": 0,
+      "upvote": 0,
+      "country": "",
+      "changing_table": false,
+      "edit_id": 0,
+      "approved": false
     }
   ]
 }
