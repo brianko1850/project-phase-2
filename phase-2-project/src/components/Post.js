@@ -3,14 +3,13 @@ import { useState } from "react";
 import './style.css'
 import { QueryContext } from "../context/query";
 
-function Post({ newPendings, setNewPendings }) {
+function Post({ setNewPendings }) {
 
-    const { query, setQuery } = useContext(QueryContext)
+    const { query } = useContext(QueryContext)
     const [ name, setName ] = useState("")
     const [ address, setAddress ] =useState("")
     const [ directions, setDirections ] = useState("")
-    const newBathroom = 
-        {
+    const newBathroom = {
           "id": Math.random(),
           "name": name,
           "street": address,
@@ -30,9 +29,9 @@ function Post({ newPendings, setNewPendings }) {
           "changing_table": false,
           "edit_id": 0,
           "approved": false
-        }
-    function handleSubmit(){
+    }
 
+    function handleSubmit() {
         fetch("http://localhost:8000/bathrooms", {
                 method: "POST",
                 headers: {
@@ -40,46 +39,46 @@ function Post({ newPendings, setNewPendings }) {
                 },
                 body: JSON.stringify(newBathroom)
             })
-                .then(r => r.json())
-                .then(data => setNewPendings(data))
+            .then(r => r.json())
+             .then(data => setNewPendings(data))
     }
     
 
     return (
-        <form className="form" onSubmit={(e)=>{
+        <form onSubmit={(e)=>{
             e.preventDefault()
             handleSubmit(newBathroom)}
         }>
-        <h2>Add a Commode</h2>
-        <label htmlFor="Name">Name:</label>
-        <input
-            type="text"
-            required
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-        />
-        <br/>
-         <label htmlFor="Address">Address:</label>
-        <textarea 
-            required
-            value={address}
-            onChange={(e) => setAddress(e.target.value)}
-        ></textarea>
-        <br/>
-        <label htmlFor="Directions">Directions</label>
-        <textarea
-            value={directions}
-            onChange={(e) => setDirections(e.target.value)}
-        ></textarea>
-        <button type="submit">Add</button>
-        <p>
-            {name}
-            <br/>
-            {address}
-            <br/>
-            {directions}
-        </p>
-    </form>
+            <h2>Add a Commode</h2>
+                <label htmlFor="Name">Name:</label>
+                <input
+                    type="text"
+                    required
+                    value={name}
+                    onChange={(e) => setName(e.target.value)}
+                />
+                <br/>
+                <label htmlFor="Address">Address:</label>
+                <textarea 
+                    required
+                    value={address}
+                    onChange={(e) => setAddress(e.target.value)}
+                ></textarea>
+                <br/>
+                <label htmlFor="Directions">Directions</label>
+                <textarea
+                    value={directions}
+                    onChange={(e) => setDirections(e.target.value)}
+                ></textarea>
+                <button type="submit">Add</button>
+                <p>
+                    {name}
+                    <br/>
+                    {address}
+                    <br/>
+                    {directions}
+                </p>
+        </form>
     )
 }
 

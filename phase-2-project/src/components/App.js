@@ -33,7 +33,7 @@ function App() {
         <NavBar/>
           <Routes>
               <Route path="/" element={ <Home bathrooms={bathrooms}/>}/>
-              <Route path="/commodes/new" element={ <Post newPendings={ newPendings } setNewPendings={setNewPendings}/>}/>
+              <Route path="/commodes/new" element={ <Post setNewPendings={setNewPendings}/>}/>
               <Route path="/commodes/pending" element={ <Pending pendings={ pendings }/>}/>
           </Routes>
       </Router>

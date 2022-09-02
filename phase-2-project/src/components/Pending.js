@@ -1,6 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import { QueryContext } from "../context/query";
-
+import React from "react";
 
 function Pending({ pendings }) {
 
@@ -19,9 +17,10 @@ function Pending({ pendings }) {
     })
 
     return (
-    <>    
-      { displayPending }
-    </>    )
+      <>    
+        { displayPending }
+      </>    
+    )
 }
 
 export default Pending
