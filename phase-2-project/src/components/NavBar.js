@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { QueryContext } from "../context/query";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import './style.css'
 
